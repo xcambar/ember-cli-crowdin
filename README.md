@@ -23,7 +23,7 @@ Check that your configuration is valid by running `ember crowdin:check`.
 Ensures everything is configured properly and
 that you have access to the Crowdin API.
 
-## `ember crowdin:doanload`
+## `ember crowdin:download`
 
 Downloads the translations to the path specified
 in `config/crowdin.js` under the key `downloadPath` (defaults to `app/locales`).
