@@ -1,6 +1,7 @@
 /*jshint node:true*/
 module.exports = {
   projectName: '',
-  apiKey: ''
+  apiKey: '',
+  downloadPath: 'app/locales'
 };
 
