@@ -1,26 +1,23 @@
 # Ember-cli-crowdin
 
-This README outlines the details of collaborating on this Ember addon.
+This Addon manages and helps with the integration of i18n in your Ember app
+with [Crowdin](https://crowdin.com/).
 
-## Installation
+# Installation
 
-* `git clone` this repository
-* `npm install`
-* `bower install`
+`ember install ember-cli-crowdin`
 
-## Running
+## Configuration
 
-* `ember server`
-* Visit your app at http://localhost:4200.
+The installation has normally created a file `config/crowfin.js`. If not, run
+`ember generate ember-cli-crowdin` to fix this.
 
-## Running Tests
+Simply open this file and fill in the blanks.
 
-* `npm test` (Runs `ember try:testall` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
+Check that your configuration is valid by running `ember crowdin:check`.
 
-## Building
+#License
 
-* `ember build`
+Copyright Xavier Cambar (c) 2016
 
-For more information on using ember-cli, visit [http://www.ember-cli.com/](http://www.ember-cli.com/).
+Licensed under MIT. See the file LICENSE.md for details.

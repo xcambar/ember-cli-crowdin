@@ -5,7 +5,7 @@ module.exports = {
   name: 'ember-cli-crowdin',
   includedCommands: function() {
     return {
-      crowdin: require('./lib/commands/crowdin')
+      'crowdin:check': require('./lib/commands/crowdin')
     };
   }
 };
