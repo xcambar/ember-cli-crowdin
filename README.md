@@ -16,6 +16,18 @@ Simply open this file and fill in the blanks.
 
 Check that your configuration is valid by running `ember crowdin:check`.
 
+# Usage
+
+## `ember crowdin:check`
+
+Ensures everything is configured properly and
+that you have access to the Crowdin API.
+
+## `ember crowdin:doanload`
+
+Downloads the translations to the path specified
+in `config/crowdin.js` under the key `downloadPath` (defaults to `app/locales`).
+
 #License
 
 Copyright Xavier Cambar (c) 2016
