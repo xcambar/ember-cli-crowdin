@@ -9,7 +9,7 @@ with [Crowdin](https://crowdin.com/).
 
 ## Configuration
 
-The installation has normally created a file `config/crowfin.js`. If not, run
+The installation has normally created a file `config/crowdin.js`. If not, run
 `ember generate ember-cli-crowdin` to fix this.
 
 Simply open this file and fill in the blanks.
