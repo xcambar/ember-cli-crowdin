@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-crowdin",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Manages the Crowdin translations for your Ember app from ember-cli",
   "directories": {
     "doc": "doc",
