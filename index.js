@@ -1,5 +1,3 @@
-'use strict';
-
 module.exports = {
   name: 'ember-cli-crowdin',
   preBuild: function() {
@@ -11,7 +9,8 @@ module.exports = {
   includedCommands: function() {
     return {
       'crowdin:check': require('./lib/commands/check'),
-      'crowdin:download': require('./lib/commands/download')
+      'crowdin:download': require('./lib/commands/download'),
+      'crowdin:upload': require('./lib/commands/upload')
     };
   }
 };

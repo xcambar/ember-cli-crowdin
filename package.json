@@ -26,7 +26,7 @@
   },
   "dependencies": {
     "chalk": "^1.1.1",
-    "crowdin": "^1.0.0",
+    "crowdin-node": "^1.0.0",
     "ember-cli-babel": "^6.6.0"
   },
   "devDependencies": {
