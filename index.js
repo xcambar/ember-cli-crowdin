@@ -10,6 +10,7 @@ module.exports = {
     return {
       'crowdin:check': require('./lib/commands/check'),
       'crowdin:download': require('./lib/commands/download'),
+      'crowdin:setup': require('./lib/commands/setup'),
       'crowdin:upload': require('./lib/commands/upload')
     };
   }

@@ -26,8 +26,10 @@
   },
   "dependencies": {
     "chalk": "^1.1.1",
+    "crowdin-api": "github:outdoorsy/crowdin-api#intl-version",
     "crowdin-node": "^1.0.0",
-    "ember-cli-babel": "^6.6.0"
+    "ember-cli-babel": "^6.6.0",
+    "minimatch": "^3.0.4"
   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.5",
@@ -52,7 +54,7 @@
     "loader.js": "^4.2.3"
   },
   "engines": {
-    "node": "^4.5 || 6.* || >= 7.*"
+    "node": "6.* || >= 7.*"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
