@@ -2,6 +2,7 @@
 module.exports = {
   projectName: '',
   apiKey: '',
-  downloadPath: 'app/locales'
+  downloadPath: 'translations',
+  baseFile: 'translations/en-us.yaml',
+  folderName: 'dashboard'
 };
-
