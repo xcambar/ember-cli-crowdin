@@ -2,8 +2,8 @@ module.exports = {
   name: 'ember-cli-crowdin',
   preBuild: function() {
 
-    // download translations when build ENV is anything other than development
-    if (this.app.env === 'development') {
+    // download translations when build ENV is anything other than development and test
+    if (this.app.env === 'development' && this.app.env === 'test') {
       return;
     }
 
