@@ -8,10 +8,10 @@ module.exports = {
   },
   includedCommands: function() {
     return {
-      'crowdin:check': require('./lib/commands/check'),
-      'crowdin:download': require('./lib/commands/download'),
-      'crowdin:setup': require('./lib/commands/setup'),
-      'crowdin:upload': require('./lib/commands/upload')
+      'i18n:check': require('./lib/commands/check'),
+      'i18n:download': require('./lib/commands/download'),
+      'i18n:setup': require('./lib/commands/setup'),
+      'i18n:upload': require('./lib/commands/upload')
     };
   }
 };
