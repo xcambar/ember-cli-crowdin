@@ -3,7 +3,7 @@ module.exports = {
   preBuild: function() {
 
     // download translations when build ENV is anything other than development and test
-    if (this.app.env === 'development' && this.app.env === 'test') {
+    if (this.app.env === 'development' || this.app.env === 'test') {
       return;
     }
 
