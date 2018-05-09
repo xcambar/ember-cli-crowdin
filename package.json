@@ -1,6 +1,6 @@
 {
-  "name": "ember-cli-crowdin",
-  "version": "0.2.1",
+  "name": "@outdoorsyco/ember-cli-crowdin",
+  "version": "1.0.1",
   "description": "Manages the Crowdin translations for your Ember app from ember-cli",
   "keywords": [
     "ember-addon",
@@ -12,12 +12,12 @@
     "ember-i18n"
   ],
   "license": "MIT",
-  "author": "Xavier Cambar <xcambar@gmail.com>",
+  "author": "Outdoorsy",
   "directories": {
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "https://github.com/xcambar/ember-cli-crowdin",
+  "repository": "https://github.com/outdoorsy/ember-cli-crowdin",
   "scripts": {
     "build": "ember build",
     "lint:js": "eslint ./*.js addon addon-test-support app config lib server test-support tests",
