@@ -1,6 +1,6 @@
 {
   "name": "@outdoorsyco/ember-cli-crowdin",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Manages the Crowdin translations for your Ember app from ember-cli",
   "keywords": [
     "ember-addon",
@@ -32,6 +32,9 @@
   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.5",
+    "chalk": "^1.1.1",
+    "colors": "^1.2.4",
+    "diff": "^3.5.0",
     "ember-ajax": "^3.0.0",
     "ember-cli": "~2.18.2",
     "ember-cli-dependency-checker": "^2.0.0",
@@ -50,12 +53,10 @@
     "ember-source": "~2.18.0",
     "eslint-plugin-ember": "^5.0.0",
     "eslint-plugin-node": "^5.2.1",
-    "loader.js": "^4.2.3",
     "js-yaml": "^3.11.0",
-    "diff": "^3.5.0",
-    "chalk": "^1.1.1",
-    "colors": "^1.2.4",
-    "rimraf": "^2.6.2"
+    "loader.js": "^4.2.3",
+    "rimraf": "^2.6.2",
+    "unzipper": "^0.8.13"
   },
   "engines": {
     "node": "6.* || >= 7.*"
