@@ -1,6 +1,6 @@
 {
   "name": "@outdoorsyco/ember-cli-crowdin",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Manages the Crowdin translations for your Ember app from ember-cli",
   "keywords": [
     "ember-addon",
@@ -25,7 +25,7 @@
     "test": "ember try:each"
   },
   "dependencies": {
-    "crowdin-api": "github:outdoorsy/crowdin-api#intl-version",
+    "@outdoorsyco/crowdin-api": "^2.1.0",
     "crowdin-node": "^1.0.0",
     "ember-cli-babel": "^6.14.1",
     "minimatch": "^3.0.4",
@@ -56,8 +56,7 @@
     "eslint-plugin-node": "^5.2.1",
     "js-yaml": "^3.12.0",
     "loader.js": "^4.7.0",
-    "rimraf": "^2.6.2",
-    "walk-sync": "^0.3.2"
+    "rimraf": "^2.6.2"
   },
   "engines": {
     "node": "6.* || >= 7.*"
