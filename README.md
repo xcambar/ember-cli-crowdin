@@ -18,12 +18,21 @@ Check that your configuration is valid by running `ember crowdin:check`.
 
 # Usage
 
-## `ember crowdin:check`
+## `ember i18n:check`
 
 Ensures everything is configured properly and
-that you have access to the Crowdin API.
+that you have access to the i18nCrowdin API.
 
-## `ember crowdin:download`
+## `ember i18n:report`
+
+Checks for duplicate keys between projects.
+Please use this after pushing translations to avoid key/value conflicts between applications that share dependancies.
+
+## `ember i18n:up`
+
+Uploads the translations to crowdin for translation
+
+## `ember i18n:dl`
 
 Downloads the translations to the path specified
 in `config/crowdin.js` under the key `downloadPath` (defaults to `app/locales`).
