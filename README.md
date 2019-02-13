@@ -32,8 +32,13 @@ in `config/crowdin.js` under the key `downloadPath` (defaults to `app/locales`).
 
 info: https://support.crowdin.com/in-context-localization/
 
-To load the integration pass `incontext=true` as a query param to the url
-and make sure that the consuming app is has the project name pulled into `config/environment` from `config/crowdin`:
+To load the integration, pass `incontext=true` as a query param to the url
+and make sure that the consuming app has incontext configured:  
+
+`// config/environment.js`
+
+`const crowdinConfig = require('./crowdin.js');`
+
 ```
 crowdin: {
   projectName: crowdinConfig.projectName

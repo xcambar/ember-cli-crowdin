@@ -16,7 +16,7 @@ module.exports = {
 
   config(env, appConfig) {
     if (appConfig.crowdin && appConfig.crowdin.includeIncontextInProduction) {
-      this.includeIncontextInProduction = appConfig.crowdin.includeIncontextInProduction;
+      this.includeIncontextInProduction = true;
     }
   },
 
