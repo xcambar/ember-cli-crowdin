@@ -28,7 +28,35 @@ that you have access to the Crowdin API.
 Downloads the translations to the path specified
 in `config/crowdin.js` under the key `downloadPath` (defaults to `app/locales`).
 
-#License
+# "In-context" integration:
+
+info: https://support.crowdin.com/in-context-localization/
+
+To load the integration, pass `incontext=true` as a query param to the url
+and make sure that the consuming app has incontext configured:  
+
+`// config/environment.js`
+
+`const crowdinConfig = require('./crowdin.js');`
+
+```
+crowdin: {
+  projectName: crowdinConfig.projectName
+}
+```
+
+The initializer that loads this integration is removed from production builds by default
+but if, for some reason, you would like to include it in the production build add `includeIncontextInProduction: true`
+to your environment:
+
+```
+crowdin: {
+  projectName: crowdinConfig.projectName,
+  includeIncontextInProduction: true
+}
+```
+
+# License
 
 Copyright Xavier Cambar (c) 2016
 
