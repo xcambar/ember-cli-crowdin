@@ -2,7 +2,7 @@ const Funnel = require('broccoli-funnel');
 
 module.exports = {
   name: 'ember-cli-crowdin',
-  excludeInProduction: false,
+  excludeFromBuild: false,
 
   preBuild: function() {
 
@@ -15,15 +15,15 @@ module.exports = {
   },
 
   config(env, appConfig) {
-    if (appConfig.crowdin && appConfig.crowdin.excludeInProduction) {
-      this.excludeInProduction = true;
+    if (appConfig.crowdin && appConfig.crowdin.excludeFromBuild) {
+      this.excludeFromBuild = true;
     }
   },
 
   treeFor(name) {
     var tree = this._super.treeFor.apply(this, arguments);
 
-    if ((name === 'app' || name === 'addon') && this.excludeInProduction) {
+    if ((name === 'app' || name === 'addon') && this.excludeFromBuild) {
       tree = new Funnel(tree, { exclude: [ /in-context/, /inject-script/ ] });
     }
     return tree;
