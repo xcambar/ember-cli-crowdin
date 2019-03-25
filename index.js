@@ -11,7 +11,8 @@ module.exports = {
       return;
     }
 
-    return require('./lib/commands/download').run.call(this);
+    // this.project is the consuming application
+    return require('./lib/commands/download').run.call(this.project);
   },
 
   config(env, appConfig) {
