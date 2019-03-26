@@ -5,13 +5,12 @@ module.exports = {
   excludeFromBuild: false,
 
   preBuild: function() {
-
-    // download translations when build ENV is anything other than development and test
-    if (this.app.env === 'development' || this.app.env === 'test') {
-      return;
+    if (this.app.env !== 'development') {
+      // download consuming application's translations before it builds
+      return require('./lib/commands/download').run.call(this, {
+        project: this.project
+      });
     }
-
-    return require('./lib/commands/download').run.call(this);
   },
 
   config(env, appConfig) {
