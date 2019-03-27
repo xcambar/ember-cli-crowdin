@@ -1,1 +1,1 @@
-export { default } from 'ember-cli-crowdin/utils/inject-script';
+export { default } from '@outdoorsyco/ember-cli-crowdin/utils/inject-script';

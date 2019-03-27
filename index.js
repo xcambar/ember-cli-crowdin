@@ -1,11 +1,12 @@
+// eslint-disable-next-line node/no-extraneous-require
 const Funnel = require('broccoli-funnel');
 
 module.exports = {
-  name: 'ember-cli-crowdin',
+  name: require('./package').name,
   excludeFromBuild: false,
 
   preBuild: function() {
-    if (this.app.env !== 'development') {
+    if (this.app.env !== 'development' && this.app.name !== 'dummy') {
       // download consuming application's translations before it builds
       return require('./lib/commands/download').run.call(this, {
         project: this.project
