@@ -1,6 +1,6 @@
 {
   "name": "@outdoorsyco/ember-cli-crowdin",
-  "version": "3.2.1",
+  "version": "3.2.2",
   "description": "Manages the Crowdin translations for your Ember app from ember-cli",
   "keywords": [
     "ember-addon",
