@@ -3,6 +3,10 @@ const Funnel = require('broccoli-funnel');
 const fs = require('fs');
 const downloadTranslations = require('./lib/commands/download');
 
+process.on('unhandledRejection', error => {
+  throw error;
+});
+
 module.exports = {
   name: require('./package').name,
   excludeFromBuild: false,
@@ -19,6 +23,8 @@ module.exports = {
     ) {
       return this._downloadTranslations().then(() => {
         this.hasDownloadedTranslations = true;
+      }).catch((error) => {
+        throw error;
       });
     }
   },
@@ -65,6 +71,8 @@ module.exports = {
       });
     });
 
-    return Promise.all([appPromise].concat(addonsPromises));
+    return Promise.all([appPromise].concat(addonsPromises)).catch((error) => {
+      throw error;
+    });
   }
 };
