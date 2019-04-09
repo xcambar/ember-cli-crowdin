@@ -60,19 +60,23 @@ module.exports = {
       project: this.project
     });
 
+    return appPromise.then(() => {
+      return Promise.all(this._addonsPromises());
+    }).catch((error) => {
+      throw error;
+    });
+  },
+
+  _addonsPromises() {
     // download all addons' translations
     const outdoorsyAddonsWithTranslations = this.project.addons.filter((addon) => {
       const path = addon.root;
       return path.includes('outdoorsyco') && fs.existsSync(`${path}/config/crowdin.js`);
     });
-    const addonsPromises = outdoorsyAddonsWithTranslations.map((addon) => {
+    return outdoorsyAddonsWithTranslations.map((addon) => {
       downloadTranslations.run.call(this, {
         project: addon
       });
-    });
-
-    return Promise.all([appPromise].concat(addonsPromises)).catch((error) => {
-      throw error;
     });
   }
 };
