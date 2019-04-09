@@ -1,6 +1,6 @@
 {
   "name": "@outdoorsyco/ember-cli-crowdin",
-  "version": "3.2.5",
+  "version": "3.2.6-beta.1",
   "description": "Manages the Crowdin translations for your Ember app from ember-cli",
   "keywords": [
     "ember-addon",
@@ -30,7 +30,7 @@
     "push:git": "git push --tags origin HEAD:master"
   },
   "dependencies": {
-    "@outdoorsyco/crowdin-api": "^2.1.3",
+    "@outdoorsyco/crowdin-api": "2.1.4",
     "crowdin-node": "github:outdoorsy/crowdin-node#updates",
     "ember-cli-babel": "^6.12.0",
     "minimatch": "^3.0.4",
