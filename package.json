@@ -33,6 +33,7 @@
     "@outdoorsyco/crowdin-api": "2.1.4",
     "crowdin-node": "github:outdoorsy/crowdin-node#updates",
     "ember-cli-babel": "^6.12.0",
+    "fs-extra": "^7.0.1",
     "minimatch": "^3.0.4",
     "unzipper": "^0.8.14"
   },
