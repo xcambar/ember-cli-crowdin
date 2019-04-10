@@ -29,6 +29,24 @@ module.exports = {
     }
   },
 
+  postBuild(results) {
+    if (
+      !['test', 'development'].includes(this.app.env)
+      // if this is ember-cli-crowdin itself, there's nothing to validate
+      && !this.project.root.includes('ember-cli-crowdin')
+    ) {
+      try {
+        require('./lib/commands/validate').run({
+          parentApp: this.project,
+          distLocation: results.directory,
+          ui: this.ui
+        });
+      } catch (error) {
+        throw(error);
+      }
+    }
+  },
+
   config(env, appConfig) {
     if (appConfig.crowdin && appConfig.crowdin.excludeFromBuild) {
       this.excludeFromBuild = true;
@@ -48,6 +66,7 @@ module.exports = {
     return {
       'i18n:check': require('./lib/commands/check'),
       'i18n:report': require('./lib/commands/report'),
+      'i18n:validate': require('./lib/commands/validate'),
       'i18n:download': require('./lib/commands/download'),
       'i18n:setup': require('./lib/commands/setup'),
       'i18n:upload': require('./lib/commands/upload')
