@@ -1,7 +1,5 @@
 // eslint-disable-next-line node/no-extraneous-require
 const Funnel = require('broccoli-funnel');
-const fs = require('fs');
-const downloadTranslations = require('./lib/commands/download');
 
 process.on('unhandledRejection', error => {
   throw error;
@@ -10,22 +8,22 @@ process.on('unhandledRejection', error => {
 module.exports = {
   name: require('./package').name,
   excludeFromBuild: false,
-  hasDownloadedTranslations: false,
 
-  preBuild: function() {
+  postBuild(results) {
     if (
-      // only download translations on initial build, not on live reloads
-      !this.hasDownloadedTranslations
-      // don't download in development; would slow things down.  Devs should download manually
-      && this.app.env !== 'development'
-      // if this is ember-cli-crowdin itself, there's nothing to download
+      !['test', 'development'].includes(this.app.env)
+      // if this is ember-cli-crowdin itself, there's nothing to validate
       && !this.project.root.includes('ember-cli-crowdin')
     ) {
-      return this._downloadTranslations().then(() => {
-        this.hasDownloadedTranslations = true;
-      }).catch((error) => {
-        throw error;
-      });
+      try {
+        require('./lib/commands/validate').run({
+          parentApp: this.project,
+          distLocation: results.directory,
+          ui: this.ui
+        });
+      } catch (error) {
+        throw(error);
+      }
     }
   },
 
@@ -48,35 +46,10 @@ module.exports = {
     return {
       'i18n:check': require('./lib/commands/check'),
       'i18n:report': require('./lib/commands/report'),
+      'i18n:validate': require('./lib/commands/validate'),
       'i18n:download': require('./lib/commands/download'),
       'i18n:setup': require('./lib/commands/setup'),
       'i18n:upload': require('./lib/commands/upload')
     };
-  },
-
-  _downloadTranslations() {
-    // download consuming application's translations
-    const appPromise = downloadTranslations.run.call(this, {
-      project: this.project
-    });
-
-    return appPromise.then(() => {
-      return Promise.all(this._addonsPromises());
-    }).catch((error) => {
-      throw error;
-    });
-  },
-
-  _addonsPromises() {
-    // download all addons' translations
-    const outdoorsyAddonsWithTranslations = this.project.addons.filter((addon) => {
-      const path = addon.root;
-      return path.includes('outdoorsyco') && fs.existsSync(`${path}/config/crowdin.js`);
-    });
-    return outdoorsyAddonsWithTranslations.map((addon) => {
-      downloadTranslations.run.call(this, {
-        project: addon
-      });
-    });
   }
 };
