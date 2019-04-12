@@ -11,7 +11,8 @@ module.exports = {
 
   postBuild(results) {
     if (
-      !['test', 'development'].includes(this.app.env)
+      process.env.VALIDATE !== 'false'
+      && !['test', 'development'].includes(this.app.env)
       // if this is ember-cli-crowdin itself, there's nothing to validate
       && !this.project.root.includes('ember-cli-crowdin')
     ) {
