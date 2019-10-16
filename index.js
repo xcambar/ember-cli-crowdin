@@ -1,10 +1,6 @@
 // eslint-disable-next-line node/no-extraneous-require
 const Funnel = require('broccoli-funnel');
 
-process.on('unhandledRejection', error => {
-  throw error;
-});
-
 module.exports = {
   name: require('./package').name,
   excludeFromBuild: false,
