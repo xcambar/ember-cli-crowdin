@@ -197,10 +197,10 @@
   dependencies:
     "@glimmer/di" "^0.2.0"
 
-"@outdoorsyco/crowdin-api@2.1.4":
-  version "2.1.4"
-  resolved "https://registry.yarnpkg.com/@outdoorsyco/crowdin-api/-/crowdin-api-2.1.4.tgz#e43231fe1696c3c0f618e94c8c8899e85ac60c50"
-  integrity sha512-M73mgT/CN/z08qUJw1aBB+YvIBBDDc2OZTrxWFuYrGlsUqmqW+k1Mi7FQvkehtajLhj5euD5t1MPKAzcJXiAmQ==
+"@outdoorsyco/crowdin-api@2.2.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@outdoorsyco/crowdin-api/-/crowdin-api-2.2.0.tgz#1b3abdf4613a287c5db8fb62fb2b1cf45c64273c"
+  integrity sha512-6aRb1LJkYi5eO8AOXeZsz3vF0du3ZXE/2TbospZSwe+/WJXvHxyyb4wZ7oEa4AywBngdulypX6fIfGCgKpNOOA==
   dependencies:
     request "^2.81.0"
     request-promise-native "^1.0.5"

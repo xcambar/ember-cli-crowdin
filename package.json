@@ -30,7 +30,7 @@
     "push:git": "git push --tags origin HEAD:master"
   },
   "dependencies": {
-    "@outdoorsyco/crowdin-api": "2.1.4",
+    "@outdoorsyco/crowdin-api": "2.2.0",
     "crowdin-node": "github:outdoorsy/crowdin-node#updates",
     "ember-cli-babel": "^6.12.0",
     "fs-extra": "^7.0.1",
@@ -67,7 +67,7 @@
     "rimraf": "^2.6.2"
   },
   "engines": {
-    "node": "6.* || >= 7.* || >= 8.*"
+    "node": "8.* || >= 10.*"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"

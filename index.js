@@ -7,7 +7,7 @@ module.exports = {
 
   postBuild(results) {
     if (
-      process.env.VALIDATE !== 'false'
+      process.env.VALIDATE
       && !['test', 'development'].includes(this.app.env)
       // if this is ember-cli-crowdin itself, there's nothing to validate
       && !this.project.root.includes('ember-cli-crowdin')
@@ -44,6 +44,7 @@ module.exports = {
       'i18n:check': require('./lib/commands/check'),
       'i18n:report': require('./lib/commands/report'),
       'i18n:validate': require('./lib/commands/validate'),
+      'i18n:build': require('./lib/commands/build'),
       'i18n:download': require('./lib/commands/download'),
       'i18n:setup': require('./lib/commands/setup'),
       'i18n:upload': require('./lib/commands/upload')
